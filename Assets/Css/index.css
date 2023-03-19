@@ -1,0 +1,337 @@
+#logo {
+    width: 268px;
+}
+
+input.search,
+button.search {
+    border: none;
+    background-color: #E7E7E7;
+}
+
+#searchinput {
+    height: 69px;
+}
+
+#navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.Tag-list {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.tag-appareil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #68d9a4;
+    color: white;
+    Width: auto;
+    border-radius: 5px;
+    padding: 10px 15px;
+    gap: 20px;
+}
+
+.tag-ustensiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ed6454;
+    color: white;
+    Width: auto;
+    border-radius: 5px;
+    padding: 10px 15px;
+    gap: 20px;
+}
+
+.tag-ingredients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3282f7;
+    color: white;
+    Width: auto;
+    border-radius: 5px;
+    padding: 10px 15px;
+    gap: 20px;
+}
+
+.tag-appareil p {
+    margin: 0;
+}
+
+input.nav-link {
+    padding: 0;
+    height: 69px;
+    outline: none;
+}
+
+input.nav-link::placeholder {
+    color: white;
+}
+
+input.nav-link:focus::placeholder {
+    color: transparent !important;
+}
+
+.nav {
+    width: 170px;
+}
+
+/* ---- Dropdown ---- */
+#secondary-filter {
+    width: 100%;
+    min-height: 69px;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.dropdown {
+    width: 200px;
+    max-height: 500px;
+
+    /*height: 69px;*/
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    z-index: 100;
+}
+
+.arrow-down {
+    cursor: pointer;
+}
+
+.header-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    min-height: 49px;
+    max-height: 500px;
+}
+
+#first-header-dropdown {
+    background-color: #3282f7;
+}
+
+#secondary-header-dropdown {
+    background-color: #68d9a4;
+}
+
+#third-header-dropdown {
+    background-color: #ed6454;
+}
+
+#ingredients-container {
+    background-color: #3282f7;
+    color: white;
+    opacity: 0;
+}
+
+#ingredients-container.isVisible {
+    opacity: 1;
+    transition: 0.3s;
+    display: block;
+}
+
+#appareils-container {
+    background-color: #68d9a4;
+    opacity: 0;
+    color: white;
+}
+
+#appareils-container.isVisible {
+    opacity: 1;
+    transition: 0.3s;
+    display: block;
+}
+
+#ustensils-container {
+    background-color: #ed6454;
+    opacity: 0;
+    color: white;
+
+}
+
+#ustensils-container.isVisible {
+    opacity: 1;
+    transition: 0.3s;
+    display: block;
+}
+
+.dropdown.resize {
+    width: 40%;
+}
+
+.list_container {
+    position: relative;
+    top: -4px;
+    display: none;
+}
+
+
+
+.listtag {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+#ustensils-list li {
+    text-transform: capitalize;
+    text-align: left;
+}
+
+#ingredients-list {
+    text-transform: capitalize;
+}
+
+.filter_select_all a {
+    text-decoration: none;
+    color: white;
+}
+
+.filter_select_ustensiles a {
+    text-decoration: none;
+    color: white;
+}
+
+.filter_select_ingredients a {
+    text-decoration: none;
+    color: white;
+}
+
+.fa-circle-xmark {
+    cursor: pointer;
+}
+
+.filter_select_all a:hover {
+    color: rgb(21, 59, 29);
+}
+
+/* .... input des dropdown .... */
+#ingredients-input {
+    background-color: #3282f7;
+}
+
+#appareils-input {
+    background-color: #68d9a4;
+}
+
+#ustensils-input {
+    background-color: #ed6454;
+}
+
+.little {
+    height: 100%;
+    width: 80%;
+    color: white;
+    border: none;
+    font-size: medium;
+    outline: none;
+}
+
+.little::placeholder {
+    color: white;
+    font-size: medium;
+    border: none;
+}
+
+.big {
+    display: none;
+}
+
+/* --- liste dropdown --- */
+
+.top_card_info,
+.bottom_card_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    width: 380px !important;
+    height: 368px !important;
+    padding: 0;
+
+}
+
+.card img {
+    height: 178px;
+    object-fit: cover;
+}
+
+.row {
+    justify-content: space-between;
+}
+
+.time {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.card_info {
+    margin: 20px;
+}
+
+.top_card_info h2 {
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.bottom_card_info p {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    flex: 1;
+    text-align: start;
+}
+
+.bottom_card_info ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: start;
+
+
+}
+
+.bottom_card_info li {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.result_section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.info_description {
+    flex: 2;
+}
