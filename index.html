@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/Css/normalize.css">
+    <link rel="stylesheet" href="./Assets/Css/index.css">
+
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- FontAwesome CSS only -->
+    <script src="https://kit.fontawesome.com/153a87c8d8.js" crossorigin="anonymous"></script>
+
+    <title>Les petits plats</title>
+</head>
+
+<body>
+    <header>
+
+
+        <section class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <img id="logo" src="./Assets/Public/Images/logo.png" alt="logo-petits-plats">
+                </div>
+            </div>
+        </section>
+
+    </header>
+
+    <main>
+        <section class="container text-center">
+
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <input type="text" class=" search form-control" id="searchinput" placeholder="Votre Recherche"
+                            aria-label="SearchBar" aria-describedby="button-SearchBar">
+                        <button class="search btn btn-outline-secondary " type="button" id="searchbutton"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <ul id="Tag-list" class="Tag-list">
+
+            </ul>
+
+
+
+            <div id="navbar">
+
+
+                <div class="dropdown" id="first-dropdown">
+                    <div class="header-dropdown" id="first-header-dropdown">
+
+                        <input type="text" name="ingredients-input1" id="ingredients-input" class="little"
+                            placeholder="Ingrédients">
+
+                        <span id="ingredientsBtn"><img class="arrow-down" aria-label="ouverture fermeture dropdown"
+                                alt="fleche direction bas" tabindex="0" src="./Assets/images/arrow-down.svg"></span>
+                    </div>
+                    <div class="list_container" id="ingredients-container">
+                        <ul class="listtag" id="ingredients-list"></ul>
+                    </div>
+                </div>
+
+
+                <div class="dropdown" id="secondary-dropdown">
+                    <div class="header-dropdown" id="secondary-header-dropdown">
+                        <input type="text" name="appareils-input1" id="appareils-input" class="little"
+                            placeholder="Appareils">
+                        <span id="btnappareil"><img class="arrow-down" aria-label="ouverture fermeture dropdown"
+                                alt="fleche direction bas" tabindex="0" src="./Assets/images/arrow-down.svg"></span>
+                    </div>
+                    <div class="list_container" id="appareils-container">
+                        <ul class="listtag" id="appareils-list"></ul>
+                    </div>
+                </div>
+
+
+                <div class="dropdown" id="third-dropdown">
+                    <div class="header-dropdown" id="third-header-dropdown">
+
+                        <input type="text" name="ustensils-input1" id="ustensils-input" class="little"
+                            placeholder="Ustensils">
+
+                        <span id="ustensilsBtn"><img class="arrow-down" aria-label="ouverture fermeture menu de tri"
+                                alt="fleche direction bas" tabindex="0" src="./Assets/images/arrow-down.svg"></span>
+                    </div>
+                    <div class="list_container" id="ustensils-container">
+                        <ul class="listtag" id="ustensils-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class=" container text-center result_section">
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript Bundle with Popper For Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="./Assets/Js/_Utils/collapse.js"></script>
+    <script src="/Assets/Js/script.js" type="module"></script>
+
+
+</body>
+
+</html>
