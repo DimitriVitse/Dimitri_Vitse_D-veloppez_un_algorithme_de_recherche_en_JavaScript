@@ -35,6 +35,7 @@ export class Engine {
         this.resetDisplay();
 
         this.newAllRecipes = { recipes: [] };
+
         for (let i = 0; i < this.allRecipes.length; i++) {
             if (this.allRecipes[i].name.toLowerCase().includes(terme.target.value.toLowerCase())) {
                 this.newAllRecipes.recipes.push(this.allRecipes[i]);

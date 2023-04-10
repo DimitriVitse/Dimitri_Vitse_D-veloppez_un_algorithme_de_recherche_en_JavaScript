@@ -22,11 +22,7 @@ export class Main extends Engine {
     }
 
     async start() {
-
-
-
         this.result = await this.getAll();
-
         this.extA();
         this.extI();
         this.extU();
@@ -76,6 +72,8 @@ export class Main extends Engine {
 
             }
         }
+
+
 
     }
 
@@ -175,7 +173,18 @@ export class Main extends Engine {
                 }
             }
         });
+        let taglist = document.getElementsByClassName('Tag-list')[0]
+        for (let i = 0; i < taglist.children.length; i++) {
+            let ClassName = taglist.children[i].className.split(" ")[1];
+            let name = taglist.children[i].innerText
+            if (ClassName == 'tag-ustensiles') {
+                this.ustensils = this.ustensils.filter(element => element !== name)
+            }
 
+
+
+
+        }
         const ustensilsContainer = document.getElementById('ustensils-list')
 
         for (let i = 0; i < this.ustensils.length; i++) {
@@ -240,7 +249,24 @@ export class Main extends Engine {
                 }
             }
         });
+        let taglist = document.getElementsByClassName('Tag-list')[0]
 
+        if (taglist && taglist.children && taglist.children.length > 0) {
+
+
+            for (let i = 0; i < taglist.children.length; i++) {
+                let ClassName = taglist.children[i].className.split(" ")[1];
+                let name = taglist.children[i].innerText
+                if (ClassName == 'tag-ingredients') {
+                    this.ingredients = this.ingredients.filter(element => element !== name)
+                }
+
+
+
+
+            }
+
+        }
         const ingredientsContainer = document.getElementById('ingredients-list')
 
         for (let i = 0; i < this.ingredients.length; i++) {
@@ -307,26 +333,44 @@ export class Main extends Engine {
         });
         console.log(this.appliances)
         const appliancesContainer = document.getElementById('appareils-list')
+        let taglist = document.getElementsByClassName('Tag-list')[0]
 
+        if (taglist && taglist.children && taglist.children.length > 0) {
+
+
+            for (let i = 0; i < taglist.children.length; i++) {
+                let ClassName = taglist.children[i].className.split(" ")[1];
+                let name = taglist.children[i].innerText
+                if (ClassName == 'tag-appareil') {
+                    this.appliances = this.appliances.filter(element => element !== name)
+                }
+
+
+
+
+            }
+
+        }
         for (let i = 0; i < this.appliances.length; i++) {
-            const applianceTemplate = `<li class='filter_select_all filter_select_apparel' ><a href="#">${this.appliances[i]}</a></li>`
+            const applianceTemplate = `<li class='filter_select_all filter_select_apparel' ><a class="link_tag_apparel link_tag" href="#">${this.appliances[i]}</a></li>`
             appliancesContainer.insertAdjacentHTML('beforeend', applianceTemplate)
         }
         const filterselect = document.querySelectorAll(".filter_select_apparel");
         filterselect.forEach(element => {
-            element.addEventListener("click", function (e) {
+            element.firstChild.addEventListener("click", function (e) {
                 const divtaglist = document.querySelector('.Tag-list')
 
                 divtaglist.innerHTML += ('beforeend', `<li class='tag-selected tag-appareil'><p>${e.target.textContent}</p> <i class="fa-regular fa-circle-xmark"></i></li>`);
                 tagchosen.push(e.target.textContent)
                 e.target.parentElement.style.display = 'none';
-                let selectedtag = document.querySelectorAll(".tag-appareil")
 
+                let selectedtag = document.querySelectorAll(".tag-appareil")
                 selectedtag.forEach(element => {
 
                     element.lastChild.addEventListener("click", function (e) {
-                        let selectedtemplate = document.getElementsByClassName('filter_select')
-                        let selectedfilter = document.getElementsByTagName("a")
+
+                        let selectedtemplate = document.getElementsByClassName('filter_select_apparel')
+                        let selectedfilter = document.getElementsByClassName('link_tag_apparel')
                         let tagdelete = e.target.parentElement.innerText;
 
                         for (let i = 0; i < selectedtemplate.length; i++) {
@@ -343,7 +387,6 @@ export class Main extends Engine {
                 })
 
             })
-
         });
 
     }
