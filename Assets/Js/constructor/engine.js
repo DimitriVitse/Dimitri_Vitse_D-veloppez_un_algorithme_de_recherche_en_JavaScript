@@ -58,7 +58,7 @@ export class Engine {
         let TagChoosen = { TagAppareil: [], TagIngredient: [], TagUstensil: [] };
 
         let taglist = document.getElementsByClassName('Tag-list')[0]
-
+        console.log(taglist)
         if (taglist && taglist.children && taglist.children.length > 0) {
 
 
@@ -75,7 +75,7 @@ export class Engine {
         const observer = new MutationObserver((data) => {
 
             for (let i = 0; i < data[0].target.children.length; i++) {
-
+                console.log(data[0], 'je passe en data')
                 let StringClassnameOfTag = data[0].target.children[i].className;
                 let ArrayOfClassName = StringClassnameOfTag.split(" ");
 
@@ -89,41 +89,44 @@ export class Engine {
                 if (!TagChoosen.TagUstensil.includes(data[0].target.children[i].innerText) && ArrayOfClassName[1] === "tag-ustensiles") {
                     TagChoosen.TagUstensil.push(data[0].target.children[i].innerText);
                 }
+                if (taglist) {
+                    data[0].target.children[i].lastChild.addEventListener("click", function tagchoosen(e) {
 
-                data[0].target.children[i].lastChild.addEventListener("click", function tagchoosen(e) {
-                    if (TagChoosen.TagAppareil.length != 0) {
-                        const resultfind = TagChoosen.TagAppareil.find(element => element === e.path[1].firstChild.innerText)
+                        if (TagChoosen.TagAppareil.length != 0) {
+                            const resultfind = TagChoosen.TagAppareil.find(element => element === e.path[1].firstChild.innerText)
 
 
-                        TagChoosen.TagAppareil = TagChoosen.TagAppareil.filter(element => element != resultfind);
+                            TagChoosen.TagAppareil = TagChoosen.TagAppareil.filter(element => element != resultfind);
 
-                        if (TagChoosen.TagAppareil.includes(e.path[1].firstChild.innerText)) {
-                            TagChoosen.TagAppareil.splice(e.path[1].firstChild.innerText, 1)
+                            if (TagChoosen.TagAppareil.includes(e.path[1].firstChild.innerText)) {
+                                TagChoosen.TagAppareil.splice(e.path[1].firstChild.innerText, 1)
+                            }
                         }
-                    }
-                    if (TagChoosen.TagUstensil.length != 0) {
-                        const resultfind = TagChoosen.TagUstensil.find(element => element === e.path[1].firstChild.innerText)
+                        if (TagChoosen.TagUstensil.length != 0) {
+                            const resultfind = TagChoosen.TagUstensil.find(element => element === e.path[1].firstChild.innerText)
 
 
-                        TagChoosen.TagUstensil = TagChoosen.TagUstensil.filter(element => element != resultfind);
+                            TagChoosen.TagUstensil = TagChoosen.TagUstensil.filter(element => element != resultfind);
 
-                        if (TagChoosen.TagUstensil.includes(e.path[1].firstChild.innerText)) {
-                            TagChoosen.TagUstensil.splice(e.path[1].firstChild.innerText, 1)
+                            if (TagChoosen.TagUstensil.includes(e.path[1].firstChild.innerText)) {
+                                TagChoosen.TagUstensil.splice(e.path[1].firstChild.innerText, 1)
+                            }
                         }
-                    }
-                    if (TagChoosen.TagIngredient.length != 0) {
-                        const resultfind = TagChoosen.TagIngredient.find(element => element === e.path[1].firstChild.innerText)
+                        if (TagChoosen.TagIngredient.length != 0) {
+                            const resultfind = TagChoosen.TagIngredient.find(element => element === e.path[1].firstChild.innerText)
 
 
-                        TagChoosen.TagIngredient = TagChoosen.TagIngredient.filter(element => element != resultfind);
+                            TagChoosen.TagIngredient = TagChoosen.TagIngredient.filter(element => element != resultfind);
 
-                        if (TagChoosen.TagIngredient.includes(e.path[1].firstChild.innerText)) {
-                            TagChoosen.TagIngredient.splice(e.path[1].firstChild.innerText, 1)
+                            if (TagChoosen.TagIngredient.includes(e.path[1].firstChild.innerText)) {
+                                TagChoosen.TagIngredient.splice(e.path[1].firstChild.innerText, 1)
+                            }
                         }
-                    }
 
 
-                })
+                    })
+                }
+
             }
 
 

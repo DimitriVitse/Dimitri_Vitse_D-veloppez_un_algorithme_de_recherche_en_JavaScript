@@ -46,6 +46,10 @@ for (let i = 0; i < arrowBtn.length; i++) {
         }
         if (e.target.parentNode.id === 'ustensilsBtn') {
             toggleDropdown(ustensilsContainer, ustensilsDropdown)
+            resetDropdown(ingredientsDropdown, ingredientsContainer)
+            resetDropdown(appareilsDropdown, appareilsContainer)
+
+
         }
     })
 }
